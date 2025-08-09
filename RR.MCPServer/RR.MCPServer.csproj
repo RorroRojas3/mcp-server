@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RR.MCPServer.Service\RR.MCPServer.Service.csproj" />
+    <ProjectReference Include="..\RR.MCPServer.Tool\RR.MCPServer.Tool.csproj" />
   </ItemGroup>
 
   <ItemGroup>

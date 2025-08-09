@@ -25,13 +25,11 @@ builder.Services.AddHttpClient("DummyJSON", client =>
     client.BaseAddress = new Uri(dummyJsonUrl);
 });
 
-builder.Services.AddTransient<IDummyJsonService, DummyJsonService>();
-
 builder.Services
     .AddMcpServer()
     .WithStdioServerTransport()
     .WithToolsFromAssembly()
-    .WithTools<DummyJsonService>();
+    .WithTools<DummyJsonTool>();
 await builder.Build().RunAsync();
 
 [McpServerToolType]
