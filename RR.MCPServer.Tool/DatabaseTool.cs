@@ -26,7 +26,7 @@ namespace RR.MCPServer.Tool
         /// or a message indicating that no test was found with the specified ID.
         /// </returns>
         /// <exception cref="ArgumentException">
-        /// Thrown when the provided recipeId is an empty GUID.
+        /// Thrown when the provided id is an empty GUID.
         /// </exception>
         [McpServerTool, Description("Get a test by its ID from the database.")]
         public async Task<string> GetTestByIdAsync([Description("The unique identifier of the test to retrieve")] Guid id)
