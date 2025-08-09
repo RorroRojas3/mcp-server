@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RR.MCPServer.Dto\RR.MCPServer.Dto.csproj" />
+    <ProjectReference Include="..\RR.MCPServer.Repository\RR.MCPServer.Repository.csproj" />
   </ItemGroup>
 
 </Project>

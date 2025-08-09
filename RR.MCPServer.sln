@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RR.MCPServer.Dto", "RR.MCPS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RR.MCPServer.Tool", "RR.MCPServer.Tool\RR.MCPServer.Tool.csproj", "{53ED447A-AC76-86DC-45F3-76A03D331BE1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RR.MCPServer.Repository", "RR.MCPServer.Repository\RR.MCPServer.Repository.csproj", "{497F5340-EB5B-419F-A721-9DD349F7A55E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RR.MCPServer.Entity", "RR.MCPServer.Entity\RR.MCPServer.Entity.csproj", "{9440B724-ABE3-4D07-BCE1-76BB528A483D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{53ED447A-AC76-86DC-45F3-76A03D331BE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53ED447A-AC76-86DC-45F3-76A03D331BE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53ED447A-AC76-86DC-45F3-76A03D331BE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{497F5340-EB5B-419F-A721-9DD349F7A55E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{497F5340-EB5B-419F-A721-9DD349F7A55E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{497F5340-EB5B-419F-A721-9DD349F7A55E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{497F5340-EB5B-419F-A721-9DD349F7A55E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9440B724-ABE3-4D07-BCE1-76BB528A483D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9440B724-ABE3-4D07-BCE1-76BB528A483D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9440B724-ABE3-4D07-BCE1-76BB528A483D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9440B724-ABE3-4D07-BCE1-76BB528A483D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
