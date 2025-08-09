@@ -1,10 +1,11 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using ModelContextProtocol.Server;
+using RR.MCPServer.Repository;
 using RR.MCPServer.Service;
-using System.ComponentModel;
+using RR.MCPServer.Tool;
 
 var builder = Host.CreateApplicationBuilder(args);
 
@@ -15,6 +16,9 @@ builder.Logging.AddConsole(consoleLogOptions =>
     // Configure all logs to go to stderr
     consoleLogOptions.LogToStandardErrorThreshold = LogLevel.Trace;
 });
+
+builder.Services.AddDbContext<McpDbContext>(options =>
+  options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddHttpContextAccessor();
 
@@ -29,5 +33,6 @@ builder.Services
     .AddMcpServer()
     .WithStdioServerTransport()
     .WithToolsFromAssembly()
-    .WithTools<DummyJsonTool>();
+    .WithTools<DummyJsonTool>()
+    .WithTools<DatabaseTool>();
 await builder.Build().RunAsync();
