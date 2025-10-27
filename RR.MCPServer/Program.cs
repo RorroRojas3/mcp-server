@@ -11,7 +11,7 @@ using RR.MCPServer.Tool;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-                     .AddUserSecrets("6ce43b58-c50c-4635-8584-384cdca89e7a")
+                     .AddUserSecrets<Program>()
                      .AddEnvironmentVariables();
 
 // MSAL Authentication Configuration
