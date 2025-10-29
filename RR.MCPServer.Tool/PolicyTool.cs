@@ -18,7 +18,7 @@ namespace RR.MCPServer.Tool
         public async Task<string> GetPolicyByIdAsync(
             [Description("The unique identifier of the policy to retrieve")] Guid id)
         {
-            _logger.LogInformation("Fetching policy with ID: {id}", id);
+            _logger.LogInformation("Fetching policy with ID: {Id}", id);
 
             var policy = await _ctx.Policies
                             .Include(x => x.CarrierContact)
@@ -45,7 +45,7 @@ namespace RR.MCPServer.Tool
                             .FirstOrDefaultAsync();
             if (policy == null)
             {
-                _logger.LogInformation("No policy found with ID: {id}", id);
+                _logger.LogInformation("No policy found with ID: {Id}", id);
                 return $"No policy found with ID: {id}";
             }
 

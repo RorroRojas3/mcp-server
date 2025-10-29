@@ -18,7 +18,7 @@ namespace RR.MCPServer.Tool
         public async Task<string> GetUnderwriterByIdAsync(
             [Description("The unique identifier of the underwriter to retrieve")] Guid id)
         {
-            _logger.LogInformation("Fetching underwriter with ID: {id}", id);
+            _logger.LogInformation("Fetching underwriter with ID: {Id}", id);
 
             var dto = await _ctx.Underwriters
                 .Where(x => x.Id == id && !x.DateDeactivated.HasValue)
@@ -34,7 +34,7 @@ namespace RR.MCPServer.Tool
 
             if (dto == null)
             {
-                _logger.LogInformation("No underwriter found with ID: {id}", id);
+                _logger.LogInformation("No underwriter found with ID: {Id}", id);
                 return $"No underwriter found with ID: {id}";
             }
 
