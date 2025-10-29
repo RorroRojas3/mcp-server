@@ -44,6 +44,7 @@ builder.Services
     .WithToolsFromAssembly()
     .WithTools<DummyJsonTool>()
     .WithTools<UnderwriterTool>()
+    .WithTools<PolicyTool>()
     .WithHttpTransport();
 
 var app = builder.Build();
