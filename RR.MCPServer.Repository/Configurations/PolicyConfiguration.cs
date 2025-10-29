@@ -1,0 +1,397 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using RR.MCPServer.Entity;
+
+namespace RR.MCPServer.Repository.Configurations
+{
+    public class PolicyConfiguration : IEntityTypeConfiguration<Policy>
+    {
+        public void Configure(EntityTypeBuilder<Policy> builder)
+        {
+            var dateTime = new DateTime(2025, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+
+            builder.HasData(
+                new Policy
+                {
+                    Id = new("1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d"),
+                    PolicyNumber = "POL-2025-001",
+                    EffectiveDate = new DateOnly(2025, 1, 1),
+                    ExpirationDate = new DateOnly(2026, 1, 1),
+                    IssueDate = new DateOnly(2024, 12, 15),
+                    CertificateNumber = "CERT-001-2025",
+                    Carrier = "Liberty Mutual Insurance",
+                    CarrierAddress = "175 Berkeley St, Boston, MA 02116",
+                    CarrierContactId = new("d2ca3e40-dadd-44ba-8fcf-bbf92ec4ab3c"), // John Smith
+                    Producer = "ABC Insurance Agency",
+                    ProducerAddress = "123 Main St, Suite 100, New York, NY 10001",
+                    ProducerEmail = "contact@abcinsurance.com",
+                    InsuredName = "Acme Corporation",
+                    InsuredAddress = "456 Business Blvd, New York, NY 10002",
+                    InsuredPhone = "(212) 555-0001",
+                    DateCreated = dateTime,
+                },
+                new Policy
+                {
+                    Id = new("2b3c4d5e-6f7a-8b9c-0d1e-2f3a4b5c6d7e"),
+                    PolicyNumber = "POL-2025-002",
+                    EffectiveDate = new DateOnly(2025, 1, 15),
+                    ExpirationDate = new DateOnly(2026, 1, 15),
+                    IssueDate = new DateOnly(2025, 1, 5),
+                    CertificateNumber = "CERT-002-2025",
+                    Carrier = "State Farm Insurance",
+                    CarrierAddress = "One State Farm Plaza, Bloomington, IL 61710",
+                    CarrierContactId = new("18dd538a-8c86-4e63-96aa-af4c6012b914"), // Sarah Johnson
+                    Producer = "Smith & Associates Insurance",
+                    ProducerAddress = "789 Oak Ave, Chicago, IL 60601",
+                    ProducerEmail = "info@smithassociates.com",
+                    InsuredName = "Global Tech Solutions",
+                    InsuredAddress = "321 Technology Dr, San Francisco, CA 94102",
+                    InsuredPhone = "(415) 555-0002",
+                    DateCreated = dateTime,
+                },
+                new Policy
+                {
+                    Id = new("3c4d5e6f-7a8b-9c0d-1e2f-3a4b5c6d7e8f"),
+                    PolicyNumber = "POL-2025-003",
+                    EffectiveDate = new DateOnly(2025, 2, 1),
+                    ExpirationDate = new DateOnly(2026, 2, 1),
+                    IssueDate = new DateOnly(2025, 1, 20),
+                    CertificateNumber = "CERT-003-2025",
+                    Carrier = "Travelers Insurance",
+                    CarrierAddress = "485 Lexington Ave, New York, NY 10017",
+                    CarrierContactId = new("a3b5c7d9-1234-5678-90ab-cdef12345678"), // Michael Williams
+                    Producer = "Premier Insurance Group",
+                    ProducerAddress = "555 Market St, Philadelphia, PA 19103",
+                    ProducerEmail = "sales@premiergroup.com",
+                    InsuredName = "Metro Manufacturing Inc",
+                    InsuredAddress = "678 Industrial Way, Detroit, MI 48201",
+                    InsuredPhone = "(313) 555-0003",
+                    DateCreated = dateTime,
+                },
+                new Policy
+                {
+                    Id = new("4d5e6f7a-8b9c-0d1e-2f3a-4b5c6d7e8f9a"),
+                    PolicyNumber = "POL-2025-004",
+                    EffectiveDate = new DateOnly(2025, 2, 15),
+                    ExpirationDate = new DateOnly(2026, 2, 15),
+                    IssueDate = new DateOnly(2025, 2, 5),
+                    CertificateNumber = "CERT-004-2025",
+                    Carrier = "Nationwide Insurance",
+                    CarrierAddress = "1 Nationwide Plaza, Columbus, OH 43215",
+                    CarrierContactId = new("b4c6d8e0-2345-6789-01bc-def123456789"), // Emily Brown
+                    Producer = "Johnson Insurance Services",
+                    ProducerAddress = "234 Elm St, Houston, TX 77002",
+                    ProducerEmail = "team@johnsoninsurance.com",
+                    InsuredName = "Coastal Shipping LLC",
+                    InsuredAddress = "890 Harbor Dr, Miami, FL 33101",
+                    InsuredPhone = "(305) 555-0004",
+                    DateCreated = dateTime,
+                },
+                new Policy
+                {
+                    Id = new("5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b"),
+                    PolicyNumber = "POL-2025-005",
+                    EffectiveDate = new DateOnly(2025, 3, 1),
+                    ExpirationDate = new DateOnly(2026, 3, 1),
+                    IssueDate = new DateOnly(2025, 2, 20),
+                    CertificateNumber = "CERT-005-2025",
+                    Carrier = "Allstate Insurance",
+                    CarrierAddress = "2775 Sanders Rd, Northbrook, IL 60062",
+                    CarrierContactId = new("c5d7e9f1-3456-7890-12cd-ef1234567890"), // David Davis
+                    Producer = "Elite Risk Advisors",
+                    ProducerAddress = "432 Pine St, Seattle, WA 98101",
+                    ProducerEmail = "advisors@eliterisk.com",
+                    InsuredName = "Summit Healthcare Group",
+                    InsuredAddress = "765 Medical Center Dr, Boston, MA 02115",
+                    InsuredPhone = "(617) 555-0005",
+                    DateCreated = dateTime,
+                },
+                new Policy
+                {
+                    Id = new("6f7a8b9c-0d1e-2f3a-4b5c-6d7e8f9a0b1c"),
+                    PolicyNumber = "POL-2025-006",
+                    EffectiveDate = new DateOnly(2025, 3, 15),
+                    ExpirationDate = new DateOnly(2026, 3, 15),
+                    IssueDate = new DateOnly(2025, 3, 5),
+                    CertificateNumber = "CERT-006-2025",
+                    Carrier = "Progressive Insurance",
+                    CarrierAddress = "6300 Wilson Mills Rd, Mayfield Village, OH 44143",
+                    CarrierContactId = new("d6e8f0a2-4567-8901-23de-f12345678901"), // Jessica Martinez
+                    Producer = "Guardian Insurance Partners",
+                    ProducerAddress = "567 Broadway, Denver, CO 80202",
+                    ProducerEmail = "info@guardianpartners.com",
+                    InsuredName = "Mountain Construction Co",
+                    InsuredAddress = "234 Builder Ln, Phoenix, AZ 85001",
+                    InsuredPhone = "(602) 555-0006",
+                    DateCreated = dateTime,
+                },
+                new Policy
+                {
+                    Id = new("7a8b9c0d-1e2f-3a4b-5c6d-7e8f9a0b1c2d"),
+                    PolicyNumber = "POL-2025-007",
+                    EffectiveDate = new DateOnly(2025, 4, 1),
+                    ExpirationDate = new DateOnly(2026, 4, 1),
+                    IssueDate = new DateOnly(2025, 3, 20),
+                    CertificateNumber = "CERT-007-2025",
+                    Carrier = "Chubb Insurance",
+                    CarrierAddress = "202 Hall's Mill Rd, Whitehouse Station, NJ 08889",
+                    CarrierContactId = new("e7f9a1b3-5678-9012-34ef-123456789012"), // Robert Garcia
+                    Producer = "Capital Insurance Brokers",
+                    ProducerAddress = "890 Capitol Ave, Sacramento, CA 95814",
+                    ProducerEmail = "brokers@capitalinsurance.com",
+                    InsuredName = "Pacific Retail Ventures",
+                    InsuredAddress = "543 Commerce St, Portland, OR 97201",
+                    InsuredPhone = "(503) 555-0007",
+                    DateCreated = dateTime,
+                },
+                new Policy
+                {
+                    Id = new("8b9c0d1e-2f3a-4b5c-6d7e-8f9a0b1c2d3e"),
+                    PolicyNumber = "POL-2025-008",
+                    EffectiveDate = new DateOnly(2025, 4, 15),
+                    ExpirationDate = new DateOnly(2026, 4, 15),
+                    IssueDate = new DateOnly(2025, 4, 5),
+                    CertificateNumber = "CERT-008-2025",
+                    Carrier = "Hartford Insurance",
+                    CarrierAddress = "One Hartford Plaza, Hartford, CT 06155",
+                    CarrierContactId = new("f8a0b2c4-6789-0123-45f0-234567890123"), // Amanda Rodriguez
+                    Producer = "Advantage Insurance Solutions",
+                    ProducerAddress = "123 Financial Dr, Charlotte, NC 28202",
+                    ProducerEmail = "solutions@advantageins.com",
+                    InsuredName = "Midland Logistics Group",
+                    InsuredAddress = "876 Transport Way, Dallas, TX 75201",
+                    InsuredPhone = "(214) 555-0008",
+                    DateCreated = dateTime,
+                },
+                new Policy
+                {
+                    Id = new("9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d3e4f"),
+                    PolicyNumber = "POL-2025-009",
+                    EffectiveDate = new DateOnly(2025, 5, 1),
+                    ExpirationDate = new DateOnly(2026, 5, 1),
+                    IssueDate = new DateOnly(2025, 4, 20),
+                    CertificateNumber = "CERT-009-2025",
+                    Carrier = "Farmers Insurance",
+                    CarrierAddress = "4680 Wilshire Blvd, Los Angeles, CA 90010",
+                    CarrierContactId = new("a9b1c3d5-7890-1234-5601-345678901234"), // Christopher Wilson
+                    Producer = "Heritage Insurance Agency",
+                    ProducerAddress = "345 Heritage Blvd, Atlanta, GA 30303",
+                    ProducerEmail = "agency@heritageins.com",
+                    InsuredName = "Southern Food Services Inc",
+                    InsuredAddress = "432 Culinary Ct, New Orleans, LA 70112",
+                    InsuredPhone = "(504) 555-0009",
+                    DateCreated = dateTime,
+                },
+                new Policy
+                {
+                    Id = new("0d1e2f3a-4b5c-6d7e-8f9a-0b1c2d3e4f5a"),
+                    PolicyNumber = "POL-2025-010",
+                    EffectiveDate = new DateOnly(2025, 5, 15),
+                    ExpirationDate = new DateOnly(2026, 5, 15),
+                    IssueDate = new DateOnly(2025, 5, 5),
+                    CertificateNumber = "CERT-010-2025",
+                    Carrier = "AIG Insurance",
+                    CarrierAddress = "175 Water St, New York, NY 10038",
+                    CarrierContactId = new("b0c2d4e6-8901-2345-6712-456789012345"), // Jennifer Taylor
+                    Producer = "Pinnacle Risk Management",
+                    ProducerAddress = "678 Executive Park, Minneapolis, MN 55402",
+                    ProducerEmail = "risk@pinnaclemanagement.com",
+                    InsuredName = "Northern Energy Systems",
+                    InsuredAddress = "987 Power Plant Rd, Minneapolis, MN 55403",
+                    InsuredPhone = "(612) 555-0010",
+                    DateCreated = dateTime,
+                },
+                new Policy
+                {
+                    Id = new("1e2f3a4b-5c6d-7e8f-9a0b-1c2d3e4f5a6b"),
+                    PolicyNumber = "POL-2025-011",
+                    EffectiveDate = new DateOnly(2025, 6, 1),
+                    ExpirationDate = new DateOnly(2026, 6, 1),
+                    IssueDate = new DateOnly(2025, 5, 20),
+                    CertificateNumber = "CERT-011-2025",
+                    Carrier = "Zurich Insurance",
+                    CarrierAddress = "1299 Zurich Way, Schaumburg, IL 60196",
+                    CarrierContactId = new("d2ca3e40-dadd-44ba-8fcf-bbf92ec4ab3c"), // John Smith
+                    Producer = "Midwest Insurance Professionals",
+                    ProducerAddress = "234 Insurance Ln, Kansas City, MO 64105",
+                    ProducerEmail = "pros@midwestinsurance.com",
+                    InsuredName = "Heartland Agriculture Co",
+                    InsuredAddress = "543 Farm Rd, Des Moines, IA 50309",
+                    InsuredPhone = "(515) 555-0011",
+                    DateCreated = dateTime,
+                },
+                new Policy
+                {
+                    Id = new("2f3a4b5c-6d7e-8f9a-0b1c-2d3e4f5a6b7c"),
+                    PolicyNumber = "POL-2025-012",
+                    EffectiveDate = new DateOnly(2025, 6, 15),
+                    ExpirationDate = new DateOnly(2026, 6, 15),
+                    IssueDate = new DateOnly(2025, 6, 5),
+                    CertificateNumber = "CERT-012-2025",
+                    Carrier = "CNA Insurance",
+                    CarrierAddress = "333 S Wabash Ave, Chicago, IL 60604",
+                    CarrierContactId = new("18dd538a-8c86-4e63-96aa-af4c6012b914"), // Sarah Johnson
+                    Producer = "Coastal Insurance Advisors",
+                    ProducerAddress = "765 Beach Blvd, San Diego, CA 92101",
+                    ProducerEmail = "advisors@coastalinsurance.com",
+                    InsuredName = "West Coast Engineering LLC",
+                    InsuredAddress = "876 Innovation Dr, San Jose, CA 95113",
+                    InsuredPhone = "(408) 555-0012",
+                    DateCreated = dateTime,
+                },
+                new Policy
+                {
+                    Id = new("3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d"),
+                    PolicyNumber = "POL-2025-013",
+                    EffectiveDate = new DateOnly(2025, 7, 1),
+                    ExpirationDate = new DateOnly(2026, 7, 1),
+                    IssueDate = new DateOnly(2025, 6, 20),
+                    CertificateNumber = "CERT-013-2025",
+                    Carrier = "Berkshire Hathaway Insurance",
+                    CarrierAddress = "3024 Harney St, Omaha, NE 68131",
+                    CarrierContactId = new("a3b5c7d9-1234-5678-90ab-cdef12345678"), // Michael Williams
+                    Producer = "Central States Insurance",
+                    ProducerAddress = "432 Center St, Indianapolis, IN 46204",
+                    ProducerEmail = "central@statesinsurance.com",
+                    InsuredName = "Reliable Auto Parts Inc",
+                    InsuredAddress = "234 Parts Ave, Cleveland, OH 44113",
+                    InsuredPhone = "(216) 555-0013",
+                    DateCreated = dateTime,
+                },
+                new Policy
+                {
+                    Id = new("4b5c6d7e-8f9a-0b1c-2d3e-4f5a6b7c8d9e"),
+                    PolicyNumber = "POL-2025-014",
+                    EffectiveDate = new DateOnly(2025, 7, 15),
+                    ExpirationDate = new DateOnly(2026, 7, 15),
+                    IssueDate = new DateOnly(2025, 7, 5),
+                    CertificateNumber = "CERT-014-2025",
+                    Carrier = "Kemper Insurance",
+                    CarrierAddress = "200 E Randolph St, Chicago, IL 60601",
+                    CarrierContactId = new("b4c6d8e0-2345-6789-01bc-def123456789"), // Emily Brown
+                    Producer = "Atlantic Insurance Group",
+                    ProducerAddress = "567 Harbor View, Baltimore, MD 21201",
+                    ProducerEmail = "group@atlanticinsurance.com",
+                    InsuredName = "Eastern Pharmaceutical Corp",
+                    InsuredAddress = "789 Research Pkwy, Raleigh, NC 27601",
+                    InsuredPhone = "(919) 555-0014",
+                    DateCreated = dateTime,
+                },
+                new Policy
+                {
+                    Id = new("5c6d7e8f-9a0b-1c2d-3e4f-5a6b7c8d9e0f"),
+                    PolicyNumber = "POL-2025-015",
+                    EffectiveDate = new DateOnly(2025, 8, 1),
+                    ExpirationDate = new DateOnly(2026, 8, 1),
+                    IssueDate = new DateOnly(2025, 7, 20),
+                    CertificateNumber = "CERT-015-2025",
+                    Carrier = "Markel Insurance",
+                    CarrierAddress = "4521 Highwoods Pkwy, Glen Allen, VA 23060",
+                    CarrierContactId = new("c5d7e9f1-3456-7890-12cd-ef1234567890"), // David Davis
+                    Producer = "Summit Insurance Partners",
+                    ProducerAddress = "890 Mountain View Dr, Salt Lake City, UT 84101",
+                    ProducerEmail = "partners@summitinsurance.com",
+                    InsuredName = "Rocky Mountain Hospitality",
+                    InsuredAddress = "321 Resort Blvd, Aspen, CO 81611",
+                    InsuredPhone = "(970) 555-0015",
+                    DateCreated = dateTime,
+                },
+                new Policy
+                {
+                    Id = new("6d7e8f9a-0b1c-2d3e-4f5a-6b7c8d9e0f1a"),
+                    PolicyNumber = "POL-2025-016",
+                    EffectiveDate = new DateOnly(2025, 8, 15),
+                    ExpirationDate = new DateOnly(2026, 8, 15),
+                    IssueDate = new DateOnly(2025, 8, 5),
+                    CertificateNumber = "CERT-016-2025",
+                    Carrier = "MetLife Insurance",
+                    CarrierAddress = "200 Park Ave, New York, NY 10166",
+                    CarrierContactId = new("d6e8f0a2-4567-8901-23de-f12345678901"), // Jessica Martinez
+                    Producer = "Professional Risk Solutions",
+                    ProducerAddress = "123 Corporate Dr, Nashville, TN 37203",
+                    ProducerEmail = "solutions@professionalrisk.com",
+                    InsuredName = "Music City Entertainment LLC",
+                    InsuredAddress = "456 Broadway, Nashville, TN 37203",
+                    InsuredPhone = "(615) 555-0016",
+                    DateCreated = dateTime,
+                },
+                new Policy
+                {
+                    Id = new("7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b"),
+                    PolicyNumber = "POL-2025-017",
+                    EffectiveDate = new DateOnly(2025, 9, 1),
+                    ExpirationDate = new DateOnly(2026, 9, 1),
+                    IssueDate = new DateOnly(2025, 8, 20),
+                    CertificateNumber = "CERT-017-2025",
+                    Carrier = "Hanover Insurance",
+                    CarrierAddress = "440 Lincoln St, Worcester, MA 01653",
+                    CarrierContactId = new("e7f9a1b3-5678-9012-34ef-123456789012"), // Robert Garcia
+                    Producer = "Northeast Insurance Specialists",
+                    ProducerAddress = "234 Main St, Portland, ME 04101",
+                    ProducerEmail = "specialists@northeastins.com",
+                    InsuredName = "New England Seafood Co",
+                    InsuredAddress = "567 Wharf St, Portland, ME 04101",
+                    InsuredPhone = "(207) 555-0017",
+                    DateCreated = dateTime,
+                },
+                new Policy
+                {
+                    Id = new("8f9a0b1c-2d3e-4f5a-6b7c-8d9e0f1a2b3c"),
+                    PolicyNumber = "POL-2025-018",
+                    EffectiveDate = new DateOnly(2025, 9, 15),
+                    ExpirationDate = new DateOnly(2026, 9, 15),
+                    IssueDate = new DateOnly(2025, 9, 5),
+                    CertificateNumber = "CERT-018-2025",
+                    Carrier = "AmTrust Insurance",
+                    CarrierAddress = "59 Maiden Ln, New York, NY 10038",
+                    CarrierContactId = new("f8a0b2c4-6789-0123-45f0-234567890123"), // Amanda Rodriguez
+                    Producer = "Southwest Risk Advisors",
+                    ProducerAddress = "789 Desert Vista, Albuquerque, NM 87102",
+                    ProducerEmail = "advisors@southwestrisk.com",
+                    InsuredName = "Desert Solar Solutions",
+                    InsuredAddress = "321 Solar Way, Tucson, AZ 85701",
+                    InsuredPhone = "(520) 555-0018",
+                    DateCreated = dateTime,
+                },
+                new Policy
+                {
+                    Id = new("9a0b1c2d-3e4f-5a6b-7c8d-9e0f1a2b3c4d"),
+                    PolicyNumber = "POL-2025-019",
+                    EffectiveDate = new DateOnly(2025, 10, 1),
+                    ExpirationDate = new DateOnly(2026, 10, 1),
+                    IssueDate = new DateOnly(2025, 9, 20),
+                    CertificateNumber = "CERT-019-2025",
+                    Carrier = "Selective Insurance",
+                    CarrierAddress = "40 Wantage Ave, Branchville, NJ 07890",
+                    CarrierContactId = new("a9b1c3d5-7890-1234-5601-345678901234"), // Christopher Wilson
+                    Producer = "Great Lakes Insurance Brokers",
+                    ProducerAddress = "432 Lake Shore Dr, Milwaukee, WI 53202",
+                    ProducerEmail = "brokers@greatlakesins.com",
+                    InsuredName = "Wisconsin Brewing Company",
+                    InsuredAddress = "876 Brewery Ave, Milwaukee, WI 53202",
+                    InsuredPhone = "(414) 555-0019",
+                    DateCreated = dateTime,
+                },
+                new Policy
+                {
+                    Id = new("0b1c2d3e-4f5a-6b7c-8d9e-0f1a2b3c4d5e"),
+                    PolicyNumber = "POL-2025-020",
+                    EffectiveDate = new DateOnly(2025, 10, 15),
+                    ExpirationDate = new DateOnly(2026, 10, 15),
+                    IssueDate = new DateOnly(2025, 10, 5),
+                    CertificateNumber = "CERT-020-2025",
+                    Carrier = "QBE Insurance",
+                    CarrierAddress = "55 Water St, New York, NY 10041",
+                    CarrierContactId = new("b0c2d4e6-8901-2345-6712-456789012345"), // Jennifer Taylor
+                    Producer = "Pacific Northwest Insurance",
+                    ProducerAddress = "567 Pioneer Square, Seattle, WA 98104",
+                    ProducerEmail = "team@pacificnorthwestins.com",
+                    InsuredName = "Evergreen Technology Corp",
+                    InsuredAddress = "234 Tech Campus Dr, Redmond, WA 98052",
+                    InsuredPhone = "(425) 555-0020",
+                    DateCreated = dateTime,
+                }
+            );
+        }
+    }
+}

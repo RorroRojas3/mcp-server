@@ -26,7 +26,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 builder.Services.AddAuthorization();
 
 // Database Configuration
-builder.Services.AddDbContext<McpDbContext>(options =>
+builder.Services.AddDbContext<PolicyDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddHttpContextAccessor();
@@ -43,10 +43,30 @@ builder.Services
     .AddMcpServer()
     .WithToolsFromAssembly()
     .WithTools<DummyJsonTool>()
-    .WithTools<DatabaseTool>()
+    .WithTools<UnderwriterTool>()
     .WithHttpTransport();
 
 var app = builder.Build();
+
+// Apply database migrations at startup
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    try
+    {
+        var context = services.GetRequiredService<PolicyDbContext>();
+
+        // This will create the database if it doesn't exist and apply all pending migrations
+        context.Database.Migrate();
+
+        app.Logger.LogInformation("Database migrations applied successfully");
+    }
+    catch (Exception ex)
+    {
+        app.Logger.LogError(ex, "An error occurred while migrating the database");
+        throw; // Rethrow to prevent app startup if migration fails
+    }
+}
 
 app.UseAuthentication();
 app.UseAuthorization();
