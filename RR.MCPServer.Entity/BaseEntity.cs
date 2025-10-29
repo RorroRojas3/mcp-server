@@ -7,8 +7,8 @@ namespace RR.MCPServer.Entity
         [Key]
         public Guid Id { get; set; } 
 
-        public DateTime DateCreated { get; set; } 
+        public DateTimeOffset DateCreated { get; set; } 
 
-        public DateTime? DateDeactivated { get; set; } 
+        public DateTimeOffset? DateDeactivated { get; set; } 
     }
 }
